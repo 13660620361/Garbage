@@ -1,0 +1,242 @@
+菜鸟教程 -- 学的不仅是技术，更是梦想！
+
+搜索……
+首页 笔记首页 ANDROID 互联网 杂乱无章 科技资讯 程序员人生 程序员笑话 编程技术
+1.5.2 Git之使用GitHub搭建远程仓库
+分类 Android 基础入门教程
+本节引言：
+在上一节中，我们学习了如何使用Git，构建我们的本地仓库，轻松的实现了版本控制以及代码还原，修改日志查看等；读者肯定不满足与本地是吧，假如是多个人一起来开发一个程序呢？我们需要一个作为服务器的远程仓库！当然搭建一个服务器是需要成本的，为什么不把项目托管到Github上呢？作为开源代码库以及版本控制系统，Github拥有140多万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法，不需要任何成本，为何不使用呢？是吧！本节就来学习如何把我们的代码托管到Github上！
+1.账号注册&仓库创建：
+打开Github官网注册：Github官网，填写注册相关信息：用户呢称，邮箱，密码
+
+注册完，跳转到如下页面，选择仓库购买方式(私有仓库,别人不可以访问，要权限)，一般我们自己玩选Free: PS:对了，这时候你邮箱可能收到一封验证邮件，点下完成验证。
+
+接下来，创建一个我们的代码仓库：
+
+为自己的仓库添加点内容提示，就是项目的一些概述(可写可不写)
+
+简单介绍下主页的一些东西：
+
+2.Clone代码库到本地
+当然，你可以直接用图形化界面克隆，不过我还是喜欢通过命令行来Clone，先复制下Clone的地址
+然后在某个地方，有键打开Git Bash：
+
+键入：
+git clone https://github.com/ZPJay/Garbage.git
+然后可以看到我们的代码库就下载完成了：
+
+打开文件夹，可以看到下述内容：
+
+3.分支管理
+对于刚接触版本控制工具的朋友来说，分支可能比较陌生，但是他会给我们带来很大的便利！限于篇幅， 笔者直接丢个链接，大家看看图就知道了：廖雪峰的官方网站：创建和合并分支！写得真心很赞~建议收藏！
+了解概念后,我们来熟悉与分支相关的几个命令：
+①创建分支(后者创建同时会切换分支):
+git branch v1.0.3 或 git checkout -b v1.0.4
+
+②查看版本库中所有分支：
+git branch -a
+
+③切换到某一分支：
+git checkout v1.0.3
+
+④删除某一分支：
+git branch -D v1.0.4
+⑤合并分支
+ git merge v1.0.3
+
+4.本地仓库与远程仓库同步问题
+前面执行的这些分支操作都是在本地进行的，说了项目托管到GitHub上，我们肯定要跟远程仓库有交流是吧！ 我们去年前面已经试过用clone命令把项目下载到本地，那么我们修改后如何把代码同步到Github上呢？我们先对我们的本地仓库做一点点修改，接着git add和git commit本地准备后，然后：
+git push origin master 或者直接 git push
+将我们本地的内容提交上去：
+
+然后看下我们的Github,可以看到内容已经发生改变，而且提交者是我的另一个账号！
+
+有同步到服务器，肯定有服务器同步到本地是吧，很简单，就一个
+git pull
+就可以
+5.本节小结
+好吧，本节就写那么多，相信你看到上面的Git教程还有一些冲突解决，分支管理，Bug分支等待高级的Git用法，考虑到这是入门教程，就不写那么深入了，有兴趣可以自己了解了解，说下自己公司目前的情况吧： ①使用Github作为我们的项目管理工具：我们都是把项目托管到Github上的，然后有两个分支：开发和测试两个分支，每个版本一个分支，最后发布时才把分支合并到master上！提bug也是在上面提的，还是比较便利的！ ②使用Trello来做流程控制，也是比较简洁高效的！有兴趣的可以了解了解！ 另外，国内访问Github可能比较缓慢，而且如果是私有仓库是要收费的，如果公司没有使用代理或者是私人开发，可能略显鸡肋，不过可以考虑下使用国产的开源仓库：Git@OSC，由开源中国提供的，提供了1000个私人仓库，好像，感觉还不错，有兴趣的可以考虑将代码托管到这里：http://git.oschina.net/！ 就到这里，如果文中有错误纰漏，欢迎指出，谢谢~
+← 1.5.1 Git使用教程之本地仓库的基本操作 1.6 .9(九妹)图片怎么玩 →
+Android 基础入门教程(Q群号：153836263)
+1.0 Android基础入门教程
+1.0.1 2015年最新Android基础入门教程目录
+1.1 背景相关与系统架构分析
+1.2 开发环境搭建
+1.2.1 使用Eclipse + ADT + SDK开发Android APP
+1.2.2 使用Android Studio开发Android APP
+1.3 SDK更新不了问题解决
+1.4 Genymotion模拟器安装
+1.5.1 Git使用教程之本地仓库的基本操作
+1.5.2 Git之使用GitHub搭建远程仓库
+1.6 .9(九妹)图片怎么玩
+1.7 界面原型设计
+1.8 工程相关解析(各种文件，资源访问)
+1.9 Android程序签名打包
+1.11 反编译APK获取代码&资源
+2.1 View与ViewGroup的概念
+2.2.1 LinearLayout(线性布局)
+2.2.2 RelativeLayout(相对布局)
+2.2.3 TableLayout(表格布局)
+2.2.4 FrameLayout(帧布局)
+2.2.5 GridLayout(网格布局)
+2.2.6 AbsoluteLayout(绝对布局)
+2.3.1 TextView(文本框)详解
+2.3.2 EditText(输入框)详解
+2.3.3 Button(按钮)与ImageButton(图像按钮)
+2.3.4 ImageView(图像视图)
+2.3.5.RadioButton(单选按钮)&Checkbox(复选框)
+2.3.6 开关按钮ToggleButton和开关Switch
+2.3.7 ProgressBar(进度条)
+2.3.8 SeekBar(拖动条)
+2.3.9 RatingBar(星级评分条)
+2.4.1 ScrollView(滚动条)
+2.4.2 Date & Time组件(上)
+2.4.3 Date & Time组件(下)
+2.4.4 Adapter基础讲解
+2.4.5 ListView简单实用
+2.4.6 BaseAdapter优化
+2.4.7ListView的焦点问题
+2.4.8 ListView之checkbox错位问题解决
+2.4.9 ListView的数据更新问题
+2.5.0 构建一个可复用的自定义BaseAdapter
+2.5.1 ListView Item多布局的实现
+2.5.2 GridView(网格视图)的基本使用
+2.5.3 Spinner(列表选项框)的基本使用
+2.5.4 AutoCompleteTextView(自动完成文本框)的基本使用
+2.5.5 ExpandableListView(可折叠列表)的基本使用
+2.5.6 ViewFlipper(翻转视图)的基本使用
+2.5.7 Toast(吐司)的基本使用
+2.5.8 Notification(状态栏通知)详解
+2.5.9 AlertDialog(对话框)详解
+2.6.0 其他几种常用对话框基本使用
+2.6.1 PopupWindow(悬浮框)的基本使用
+2.6.2 菜单(Menu)
+2.6.3 ViewPager的简单使用
+2.6.4 DrawerLayout(官方侧滑菜单)的简单使用
+3.1.1 基于监听的事件处理机制
+3.2 基于回调的事件处理机制
+3.3 Handler消息传递机制浅析
+3.4 TouchListener PK OnTouchEvent + 多点触碰
+3.5 监听EditText的内容变化
+3.6 响应系统设置的事件(Configuration类)
+3.7 AnsyncTask异步任务
+3.8 Gestures(手势)
+4.1.1 Activity初学乍练
+4.1.2 Activity初窥门径
+4.1.3 Activity登堂入室
+4.2.1 Service初涉
+4.2.2 Service进阶
+4.2.3 Service精通
+4.3.1 BroadcastReceiver牛刀小试
+4.3.2 BroadcastReceiver庖丁解牛
+4.4.1 ContentProvider初探
+4.4.2 ContentProvider再探——Document Provider
+4.5.1 Intent的基本使用
+4.5.2 Intent之复杂数据的传递
+5.1 Fragment基本概述
+5.2.1 Fragment实例精讲——底部导航栏的实现(方法1)
+5.2.2 Fragment实例精讲——底部导航栏的实现(方法2)
+5.2.3 Fragment实例精讲——底部导航栏的实现(方法3)
+5.2.4 Fragment实例精讲——底部导航栏+ViewPager滑动切换页面
+5.2.5 Fragment实例精讲——新闻(购物)类App列表Fragment的简单实现
+6.1 数据存储与访问之——文件存储读写
+6.2 数据存储与访问之——SharedPreferences保存用户偏好参数
+6.3.1 数据存储与访问之——初见SQLite数据库
+6.3.2 数据存储与访问之——又见SQLite数据库
+7.1.1 Android网络编程要学的东西与Http协议学习
+7.1.2 Android Http请求头与响应头的学习
+7.1.3 Android HTTP请求方式:HttpURLConnection
+7.1.4 Android HTTP请求方式:HttpClient
+7.2.1 Android XML数据解析
+7.2.2 Android JSON数据解析
+7.3.1 Android 文件上传
+7.3.2 Android 文件下载（1）
+7.3.3 Android 文件下载（2）
+7.4 Android 调用 WebService
+7.5.1 WebView(网页视图)基本用法
+7.5.2 WebView和JavaScrip交互基础
+7.5.3 Android 4.4后WebView的一些注意事项
+7.5.4 WebView文件下载
+7.5.5 WebView缓存问题
+7.5.6 WebView处理网页返回的错误码信息
+7.6.1 Socket学习网络基础准备
+7.6.2 基于TCP协议的Socket通信(1)
+7.6.3 基于TCP协议的Socket通信(2)
+7.6.4 基于UDP协议的Socket通信
+8.1.1 Android中的13种Drawable小结 Part 1
+8.1.2 Android中的13种Drawable小结 Part 2
+8.1.3 Android中的13种Drawable小结 Part 3
+8.2.1 Bitmap(位图)全解析 Part 1
+8.2.2 Bitmap引起的OOM问题
+8.3.1 三个绘图工具类详解
+8.3.2 绘图类实战示例
+8.3.3 Paint API之—— MaskFilter(面具)
+8.3.4 Paint API之—— Xfermode与PorterDuff详解(一)
+8.3.5 Paint API之—— Xfermode与PorterDuff详解(二)
+8.3.6 Paint API之—— Xfermode与PorterDuff详解(三)
+8.3.7 Paint API之—— Xfermode与PorterDuff详解(四)
+8.3.8 Paint API之—— Xfermode与PorterDuff详解(五)
+8.3.9 Paint API之—— ColorFilter(颜色过滤器)(1/3)
+8.3.10 Paint API之—— ColorFilter(颜色过滤器)(2-3)
+8.3.11 Paint API之—— ColorFilter(颜色过滤器)(3-3)
+8.3.12 Paint API之—— PathEffect(路径效果)
+8.3.13 Paint API之—— Shader(图像渲染)
+8.3.14 Paint几个枚举/常量值以及ShadowLayer阴影效果
+8.3.15 Paint API之——Typeface(字型)
+8.3.16 Canvas API详解(Part 1)
+8.3.17 Canvas API详解(Part 2)剪切方法合集
+8.3.18 Canvas API详解(Part 3)Matrix和drawBitmapMash
+8.4.1 Android动画合集之帧动画
+8.4.2 Android动画合集之补间动画
+8.4.3 Android动画合集之属性动画-初见
+8.4.4 Android动画合集之属性动画-又见
+9.1 使用SoundPool播放音效(Duang~)
+9.2 MediaPlayer播放音频与视频
+9.3 使用Camera拍照
+9.4 使用MediaRecord录音
+10.1 TelephonyManager(电话管理器)
+10.2 SmsManager(短信管理器)
+10.3 AudioManager(音频管理器)
+10.4 Vibrator(振动器)
+10.5 AlarmManager(闹钟服务)
+10.6 PowerManager(电源服务)
+10.7 WindowManager(窗口管理服务)
+10.8 LayoutInflater(布局服务)
+10.9 WallpaperManager(壁纸管理器)
+10.10 传感器专题(1)——相关介绍
+10.11 传感器专题(2)——方向传感器
+10.12 传感器专题(3)——加速度/陀螺仪传感器
+10.12 传感器专题(4)——其他传感器了解
+10.14 Android GPS初涉
+11.0《2015最新Android基础入门教程》完结散花~
+在线实例
+·HTML 实例
+·CSS 实例
+·JavaScript 实例
+·Ajax 实例
+·jQuery 实例
+·XML 实例
+·Java 实例
+字符集&工具
+· HTML 字符集设置
+· HTML ASCII 字符集
+· HTML ISO-8859-1
+· HTML 实体符号
+· HTML 拾色器
+· JSON 格式化工具
+最新更新
+· Shell 中的特殊字符
+· JavaScript 返回...
+· JNI 入门教程
+· fwrite 和 fread...
+· JavaScript 逻辑...
+· Python 字典 pop...
+· Python3 字典 po...
+站点信息
+· 意见反馈
+· 免责声明
+· 关于我们
+· 文章归档
+关注微信
+
+Copyright © 2013-2017 菜鸟教程  runoob.com All Rights Reserved. 备案号：闽ICP备15012807号-1
